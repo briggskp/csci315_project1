@@ -30,6 +30,9 @@ $statement->closeCursor();
 <main>
     <h1>SportsPro Technical Support</h1>
     <h2>Sports management software for the sports enthusiast</h2>
+    <nav>
+        <a href="index.php">Home</a>
+    </nav>
     
     <h3>Product List</h3>
     <section>
@@ -49,11 +52,12 @@ $statement->closeCursor();
                 <td><?php echo $product['name']; ?></td>
                 <td><?php echo $product['version']; ?></td>
                 <td><?php echo $product['release_date']; ?></td>
-                
+                <td><button>Delete</button>
             </tr>
             <?php endforeach; ?>            
         </table>
-    </section>
+    </section> </br>
+    <a href="">Add Product</a>
 </main>    
 <footer></footer>
 </body>
