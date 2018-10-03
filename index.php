@@ -21,15 +21,17 @@ $statement->closeCursor();
 <html>
 <!-- the head section -->
 <head>
-    <title></title>
+    <title>SportsPro Technical Support</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 
 <!-- the body section -->
 <body>
 <main>
-    <h1>Product List</h1>
-
+    <h1>SportsPro Technical Support</h1>
+    <h2>Sports management software for the sports enthusiast</h2>
+    
+    <h3>Product List</h3>
     <section>
         <!-- display a table of products -->
         
