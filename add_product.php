@@ -1,6 +1,8 @@
-<?php
-
-?>
+<html>
+    <head>
+    <title>Add Product</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
 <main>
     <h1>Add Product</h1>
     <form action="index.php" method="post" id="add_product_form">
@@ -32,5 +34,5 @@
     <footer>&copy; 2017 SportsPro, Inc</footer>
 
 </main>
-
+</html>
 
