@@ -55,7 +55,7 @@ $statement->closeCursor();
             </tr>
             <?php endforeach; ?>            
         </table>
-        <a href="">Add Product</a>
+        <a href="add_product.php">Add Product</a>
     </section>
 </main>    
 <footer>&copy; 2017 SportsPro, Inc</footer>
