@@ -1,12 +1,19 @@
 <?php
 require_once('database.php');
 
+//Get code
+$code = filter_input(INPUT_GET, 'code');
+if ($code == NULL || $code == FALSE) {
+    $code = "DRAFT10";
+}
+
+//Obtain data in 'products' array
 $query = 'SELECT * FROM products';
 $statement = $db->prepare($query);
 $statement->bindValue(':code', $code);
 $statement->execute();
-$products = $statement1->fetchAll();
-$statement1->closeCursor();
+$products = $statement->fetchAll();
+$statement->closeCursor();
 
 ?>
 
@@ -14,7 +21,7 @@ $statement1->closeCursor();
 <html>
 <!-- the head section -->
 <head>
-    <title>My Guitar Shop</title>
+    <title></title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 
