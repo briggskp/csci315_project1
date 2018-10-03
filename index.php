@@ -1,5 +1,6 @@
 <?php
 require_once('database.php');
+require('product_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -23,5 +24,30 @@ if ($action == 'list_products') {
     $statement->closeCursor();
     include('list_products.php');
 }
+else if ($action == 'delete_product'){
+    $code = filter_input(INPUT_POST, 'code');
+    if ($code == NULL || $code == FALSE) {
+        $error = "Missing code.";
+    } else { 
+        delete_product($code);
+        header("Location: .?code=$code");
+    }   
+}
+else if ($action == 'show_add_form'){
+    include('add_product.php');
+}
+ else if ($action == 'add_product') {
+    $code = filter_input(INPUT_POST, 'code');
+    $name = filter_input(INPUT_POST, 'name');
+    $version = filter_input(INPUT_POST, 'version');
+    $release_date = filter_input(INPUT_POST, 'release_date');
+    if ($code == NULL || $name == NULL || 
+            $version == NULL || $release_date == NULL) {
+        $error = "Invalid product data. Check all fields and try again.";
+    } else { 
+        add_product($code, $name, $version, $release_date);
+        header("Location: .?code=$code");
+    }
+}   
     
     ?> 

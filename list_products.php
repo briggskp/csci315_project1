@@ -31,7 +31,7 @@
                 <td><?php echo $product['name']; ?></td>
                 <td><?php echo $product['version']; ?></td>
                 <td><?php echo $product['release_date']; ?></td>
-                <td><button>Delete</button>
+                <td><button>Delete</button> 
             </tr>
             <?php endforeach; ?>            
         </table>
