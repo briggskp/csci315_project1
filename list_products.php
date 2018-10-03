@@ -1,5 +1,18 @@
+<!DOCTYPE html>
+<html>
+<!-- the head section -->
+<head>
+    <title>SportsPro Technical Support</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
 <main>
-    <h1>Product List</h1>
+    <h1>SportsPro Technical Support</h1>
+    <h2>Sports management software for the sports enthusiast</h2>
+    <nav>
+        <a href="index.php">Home</a>
+    </nav>
+    
      <h3>Product List</h3>
     <section>
         <!-- display a table of products -->
@@ -27,4 +40,7 @@
         </p>
    
 </main>
+<footer>&copy; 2017 SportsPro, Inc</footer>
+</body>
+</html>
 

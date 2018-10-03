@@ -1,63 +1,27 @@
 <?php
 require_once('database.php');
 
-//Get code
-$code = filter_input(INPUT_GET, 'code');
-if ($code == NULL || $code == FALSE) {
-    $code = "DRAFT10";
+$action = filter_input(INPUT_POST, 'action');
+if ($action == NULL) {
+    $action = filter_input(INPUT_GET, 'action');
+    if ($action == NULL) {
+        $action = 'list_products';
+    }
 }
 
-//Obtain data in 'products' array
-$query = 'SELECT * FROM products';
-$statement = $db->prepare($query);
-$statement->bindValue(':code', $code);
-$statement->execute();
-$products = $statement->fetchAll();
-$statement->closeCursor();
-?>
-
-<!DOCTYPE html>
-<html>
-<!-- the head section -->
-<head>
-    <title>SportsPro Technical Support</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-</head>
-
-<!-- the body section -->
-<body>
-<main>
-    <h1>SportsPro Technical Support</h1>
-    <h2>Sports management software for the sports enthusiast</h2>
-    <nav>
-        <a href="index.php">Home</a>
-    </nav>
+if ($action == 'list_products') {
+    $code = filter_input(INPUT_GET, 'code');
+    if ($code == NULL || $code == FALSE) {
+        $code = "DRAFT10";
+        }
+    //Obtain data in 'products' array
+    $query = 'SELECT * FROM products';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':code', $code);
+    $statement->execute();
+    $products = $statement->fetchAll();
+    $statement->closeCursor();
+    include('list_products.php');
+}
     
-    <h3>Product List</h3>
-    <section>
-        <!-- display a table of products -->
-        
-        <table>
-            <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Version</th>
-                <th>Release Date</th>
-            </tr>
-
-            <?php foreach ($products as $product) : ?>
-            <tr>
-                <td><?php echo $product['code']; ?></td>
-                <td><?php echo $product['name']; ?></td>
-                <td><?php echo $product['version']; ?></td>
-                <td><?php echo $product['release_date']; ?></td>
-                <td><button>Delete</button>
-            </tr>
-            <?php endforeach; ?>            
-        </table>
-        <a href="add_product.php">Add Product</a>
-    </section>
-</main>    
-<footer>&copy; 2017 SportsPro, Inc</footer>
-</body>
-</html>
+    ?> 
