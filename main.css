@@ -24,21 +24,20 @@ aside {
     float: left;
     width: 150px;
 }
-nav ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-nav ul li {
-    padding-bottom: 0.5em;
+nav {
+    padding-bottom: 1.5em;
+    border-bottom: 2px solid black;
 }
 section {
     float: left;
     width: 500px;
+    padding-bottom: 1.0em;
 }
 footer {
     margin: 0;
     padding-top: 1.5em;
+    border-top: 2px solid black;
+    text-align: right;
     clear: both;
 }
 /* the styles for the other HTML elements */

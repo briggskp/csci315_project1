@@ -14,7 +14,6 @@ $statement->bindValue(':code', $code);
 $statement->execute();
 $products = $statement->fetchAll();
 $statement->closeCursor();
-
 ?>
 
 <!DOCTYPE html>
@@ -56,9 +55,9 @@ $statement->closeCursor();
             </tr>
             <?php endforeach; ?>            
         </table>
-    </section> </br>
-    <a href="">Add Product</a>
+        <a href="">Add Product</a>
+    </section>
 </main>    
-<footer></footer>
+<footer>&copy; 2017 SportsPro, Inc</footer>
 </body>
 </html>
