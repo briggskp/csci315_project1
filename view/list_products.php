@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html>
-<!-- the head section -->
-<head>
-    <title>SportsPro Technical Support</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-</head>
-<body>
+<?php include 'header.php'; ?>
 <main>
-    <h1>SportsPro Technical Support</h1>
-    <h2>Sports management software for the sports enthusiast</h2>
-    <nav>
-        <a href="index.php">Home</a>
-    </nav>
-    
-     <h3>Product List</h3>
+    <h1>Product List</h1>
+
     <section>
         <!-- display a table of products -->
         
@@ -23,15 +11,23 @@
                 <th>Name</th>
                 <th>Version</th>
                 <th>Release Date</th>
+                <th>&nbsp;</th>
             </tr>
-
             <?php foreach ($products as $product) : ?>
             <tr>
                 <td><?php echo $product['code']; ?></td>
                 <td><?php echo $product['name']; ?></td>
                 <td><?php echo $product['version']; ?></td>
                 <td><?php echo $product['release_date']; ?></td>
-                <td><button>Delete</button> 
+                <td><form action="." method="post">
+                    <input type="hidden" name="action"
+                           value="delete_product">
+                    <input type="hidden" name="code"
+                           value="<?php echo $product['code']; ?>">
+                    <input type="hidden" name="name"
+                           value="<?php echo $product['name']; ?>">
+                    <input type="submit" value="Delete">
+                </form></td>
             </tr>
             <?php endforeach; ?>            
         </table>
@@ -40,7 +36,5 @@
         </p>
    
 </main>
-<footer>&copy; 2017 SportsPro, Inc</footer>
-</body>
-</html>
+<?php include 'footer.php'; ?>
 

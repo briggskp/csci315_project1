@@ -1,6 +1,6 @@
 <?php
-require_once('database.php');
-require('product_db.php');
+require_once('../model/database.php');
+require('../model/product_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -22,7 +22,7 @@ if ($action == 'list_products') {
     $statement->execute();
     $products = $statement->fetchAll();
     $statement->closeCursor();
-    include('list_products.php');
+    include('../view/list_products.php');
 }
 else if ($action == 'delete_product'){
     $code = filter_input(INPUT_POST, 'code');
@@ -34,7 +34,7 @@ else if ($action == 'delete_product'){
     }   
 }
 else if ($action == 'show_add_form'){
-    include('add_product.php');
+    include('../view/add_product.php');
 }
  else if ($action == 'add_product') {
     $code = filter_input(INPUT_POST, 'code');
@@ -49,5 +49,4 @@ else if ($action == 'show_add_form'){
         header("Location: .?code=$code");
     }
 }   
-    
-    ?> 
+?> 

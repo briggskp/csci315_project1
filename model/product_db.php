@@ -50,3 +50,4 @@ function delete_product($code){
     $statement->execute();
     $statement->closeCursor();
 }
+?>
